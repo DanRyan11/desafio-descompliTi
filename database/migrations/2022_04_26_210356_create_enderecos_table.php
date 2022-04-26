@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('logradouro');
             $table->integer('numero');
             $table->string('bairro');
+            $table->string('complemento')->nullable();
             $table->unsignedBigInteger('cidade_id');
             $table->timestamps();
             $table->binary('status');

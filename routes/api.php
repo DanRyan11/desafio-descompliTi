@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CidadeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return response()->json([
-        'message' => 'Welcome to the Laravel API',
-        'status' => 'success',
-    ]);
-});
+Route::apiResource('cidades', CidadeController::class);
+Route::apiResource('enderecos', EnderecoController::class);
 
 Route::post('/cidade/import', function () {
     return response()->json([

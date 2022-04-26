@@ -20,3 +20,8 @@ Route::get('/', function () {
         'status' => 'success',
     ]);
 });
+
+Route::post('/cidade/import', function () {
+    return response()->json([
+    ]);
+});

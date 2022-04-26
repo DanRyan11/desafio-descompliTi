@@ -41,14 +41,14 @@ class EnderecoController extends Controller
 
     public function update(Request $request, $id)
     {
-        $endereco = $this->enderecoService->update($id, $request->validate());
+        $this->enderecoService->update($id, $request->validate());
 
         return response()->json(['updated' => true,202]);
     }
 
     public function destroy($id)
     {
-        $endereco = $this->enderecoService->dete($id);
+        $this->enderecoService->delete($id);
 
         return response()->json([[],204]);
     }

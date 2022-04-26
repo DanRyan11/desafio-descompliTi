@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('complemento')->nullable();
             $table->unsignedBigInteger('cidade_id');
             $table->timestamps();
-            $table->binary('status');
+            $table->binary('status')->default(1);
         });
     }
 

@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('estados', function (Blueprint $table) {
-            $table->id();
-            $table->integer('id_ibge');
+            $table->integer('id_ibge')->primary();
             $table->string('sigla');
             $table->string('nome');
             $table->timestamps();

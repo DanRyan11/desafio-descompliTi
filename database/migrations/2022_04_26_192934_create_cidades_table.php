@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cidades', function (Blueprint $table) {
-            $table->id();
-            $table->integer('ibge');
+            $table->integer('id_ibge')->primary();
             $table->string('nome');
             $table->timestamps();
         });

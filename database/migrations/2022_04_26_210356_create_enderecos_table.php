@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('numero');
             $table->string('bairro');
             $table->string('complemento')->nullable();
-            $table->unsignedBigInteger('cidade_id');
+            $table->unsignedBigInteger('cidade_ibge');
             $table->timestamps();
             $table->boolean('status')->default(1);
         });

@@ -63,7 +63,7 @@ class EnderecoController extends Controller
     {
         $this->enderecoService->deleteEndereco($id);
 
-        return response()->json([[],204]);
+        return response()->json([],204);
     }
 
 }

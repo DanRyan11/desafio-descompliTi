@@ -48,7 +48,7 @@ class EnderecoTest extends TestCase
             'logradouro'  => 'Rua Teste',
             'numero'      => '123',
             'bairro'      => 'Bairro Teste',
-            'cidade_id'   => 1,
+            'cidade_ibge'   => 1,
         ];
 
         shuffle($data);
@@ -66,7 +66,7 @@ class EnderecoTest extends TestCase
             'numero'      => '123',
             'bairro'      => 'Bairro Teste',
             'complemento' => 'Complemento Teste',
-            'cidade_id'   => 1,
+            'cidade_ibge'   => 1,
         ];
 
         $response = $this->postJson('/enderecos',$data);
@@ -83,7 +83,7 @@ class EnderecoTest extends TestCase
             'numero'      => '123',
             'bairro'      => 'Bairro Teste',
             'complemento' => 'Complemento Teste',
-            'cidade_id'   => 2,
+            'cidade_ibge'   => 2,
         ];
 
         $response = $this->putJson("/enderecos/{$endereco->id}",$data);
@@ -98,7 +98,7 @@ class EnderecoTest extends TestCase
             'numero'      => '123',
             'bairro'      => 'Bairro Teste',
             'complemento' => 'Complemento Teste',
-            'cidade_id'   => 2,
+            'cidade_ibge'   => 2,
         ];
 
         $response = $this->putJson("/enderecos/valor_fake",$data);
@@ -113,7 +113,7 @@ class EnderecoTest extends TestCase
             'logradouro'  => 'Rua Teste',
             'numero'      => '123',
             'bairro'      => 'Bairro Teste',
-            'cidade_id'   => 1,
+            'cidade_ibge'   => 1,
         ];
 
         shuffle($data);

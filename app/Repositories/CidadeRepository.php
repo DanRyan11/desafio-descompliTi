@@ -8,7 +8,7 @@ class CidadeRepository{
 
     protected $entity;
 
-    public function __contruct(Cidade $cidade)
+    public function __construct(Cidade $cidade)
     {
         $this->entity = $cidade;
     }

@@ -28,7 +28,7 @@ class StoreUpdateEndereco extends FormRequest
             'numero'      => ['required'],
             'bairro'      => ['required'],
             'complemento' => ['nullable'],
-            'cidade_id'   => ['required'],
+            'cidade_ibge' => ['required'],
             'status'      => ['nullable'],
         ];
     }

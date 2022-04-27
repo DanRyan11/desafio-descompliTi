@@ -5,16 +5,18 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateEndereco;
 use App\Http\Resources\EnderecoResource;
+use App\Services\CidadeService;
 use App\Services\EnderecoService;
-use Illuminate\Http\Request;
 
 class EnderecoController extends Controller
 {
     protected $enderecoService;
+    protected $municipioService;
 
-    public function __construct(EnderecoService $enderecoService)
+    public function __construct(EnderecoService $enderecoService, CidadeService $municipioService)
     {
-        $this->enderecoService = $enderecoService;
+        $this->enderecoService  = $enderecoService;
+        $this->municipioService = $municipioService;
     }
 
     public function index()
@@ -26,8 +28,12 @@ class EnderecoController extends Controller
 
     public function store(StoreUpdateEndereco $request)
     {
+        $params = $request->validated();
+
+        $this->municipioService->get($params['cidade_ibge']);
+
         $endereco = $this->enderecoService
-            ->createNewEndereco($request->validated());
+            ->createNewEndereco($params);
 
         return new EnderecoResource($endereco);
     }

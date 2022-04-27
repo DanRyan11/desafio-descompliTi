@@ -14,7 +14,7 @@ class Endereco extends Model
         'numero',
         'bairro',
         'complemento',
-        'cidade_id',
+        'cidade_ibge',
         'status'
     ];
 }

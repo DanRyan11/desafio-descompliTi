@@ -1,6 +1,10 @@
 <?php
 
-use App\Http\Controllers\Api\CidadeController;
+use App\Http\Controllers\Api\{
+    CidadeController,
+    EnderecoController,
+    EstadoController
+};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,10 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::apiResource('estados', EstadoController::class);
 Route::apiResource('cidades', CidadeController::class);
 Route::apiResource('enderecos', EnderecoController::class);
 
-Route::post('/cidade/import', function () {
-    return response()->json([
-    ]);
-});
+Route::post('cidades/import/{uf}', CidadeController::class . '@import');
+Route::post('estados/import', EstadoController::class . '@import');

@@ -20,23 +20,16 @@ class EnderecoController extends Controller
     public function index()
     {
         $enderecos = $this->enderecoService->get();
-        
+
         return EnderecoResource::collection($enderecos);
     }
 
     public function store(StoreUpdateEndereco $request)
     {
-        try {
-            $endereco = $this->enderecoService
-                                ->createNewEndereco($request->validated());
+        $endereco = $this->enderecoService
+            ->createNewEndereco($request->validated());
 
-            return new EnderecoResource($endereco);
-        } catch (\Throwable $th) {
-            return response()->json([
-                'error' => $th->getMessage()
-            ], 500);
-        }
-        
+        return new EnderecoResource($endereco);
     }
 
     public function show($id)
@@ -48,22 +41,15 @@ class EnderecoController extends Controller
 
     public function update(StoreUpdateEndereco $request, $id)
     {
-        try {
-            $this->enderecoService->updateEndereco($id, $request->validated());
+        $this->enderecoService->updateEndereco($id, $request->validated());
 
-            return response()->json(['updated' => true],202);
-        } catch (\Throwable $th) {
-            return response()->json([
-                'error' => $th->getMessage()
-            ], 500);
-        }
+        return response()->json(['updated' => true], 202);
     }
 
     public function destroy($id)
     {
         $this->enderecoService->deleteEndereco($id);
 
-        return response()->json([],204);
+        return response()->json([], 204);
     }
-
 }

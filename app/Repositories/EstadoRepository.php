@@ -20,7 +20,10 @@ class EstadoRepository
 
     public function getEstado(string $id)
     {
-        return $this->entity->findOrFail($id);
+        return $this->entity
+                    ->where('id_ibge', $id)
+                    ->orWhere('sigla', $id)
+                        ->firstOrFail();
     }
 
     public function createNewEstado(array $data)

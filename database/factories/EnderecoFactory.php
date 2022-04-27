@@ -21,7 +21,7 @@ class EnderecoFactory extends Factory
             'numero'     => $this->faker->numberBetween(1, 1000),
             'bairro'     => $this->faker->streetName,
             'complemento'=> $this->faker->sentence(10),
-            'cidade_id'  => $this->faker->numberBetween(1, 10),
+            'cidade_ibge'  => $this->faker->numberBetween(1, 10),
         ];
     }
 }

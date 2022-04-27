@@ -20,7 +20,9 @@ class CidadeRepository{
 
     public function get(string $id)
     {
-        return $this->entity->findOrFail($id);
+        return $this->entity
+                    ->where('id_ibge',$id)
+                        ->firstOrFail();
     }
 
     public function create(array $data)

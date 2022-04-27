@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cidade extends Model
 {
-    protected $fillable = ['ibge', 'nome'];
+    protected $fillable = ['id_ibge', 'nome'];
 }

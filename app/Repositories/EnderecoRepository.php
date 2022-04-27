@@ -8,35 +8,40 @@ class EnderecoRepository{
 
     protected $entity;
 
-    public function __contruct(Endereco $endereco)
+    public function __construct(Endereco $endereco)
     {
         $this->entity = $endereco;
     }
 
     public function getAll()
     {
-        return $this->entity->where('status',true);
+        return $this->entity
+                    ->where('status',true)
+                        ->get();
     }
 
-    public function get(string $id)
+    public function getEndereco(string $id)
     {
-        return $this->entity->where('status',true)->findOrFail($id);
+        return $this->entity
+                    ->where('status',true)
+                    ->where('id', $id)
+                        ->firstOrFail();
     }
 
-    public function create(array $data)
+    public function createNewEndereco(array $data)
     {
         return $this->entity->create($data);
     }
 
-    public function update(string $id,array $data)
+    public function updateEndereco(string $id,array $data)
     {
-        $endereco = $this->get($id);
+        $endereco = $this->getEndereco($id);
         return $endereco->update($data);
     }
 
     public function delete(string $id)
     {
-        return $this->update($id,['status'=>false]);
+        return $this->updateEndereco($id,['status'=>false]);
     }
 
 }

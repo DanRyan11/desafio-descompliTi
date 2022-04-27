@@ -14,20 +14,20 @@ class EnderecoService{
 
     public function get($id = false)
     {
-        return $id ? $this->repository->get($id) : $this->repository->getAll();
+        return $id ? $this->repository->getEndereco($id) : $this->repository->getAll();
     }
 
-    public function create(array $data)
+    public function createNewEndereco(array $data)
     {
-        return $this->repository->create($data);
+        return $this->repository->createNewEndereco($data);
     }
 
-    public function update($id, array $data)
+    public function updateEndereco($id, array $data)
     {
-        return $this->repository->update($id,$data);
+        return $this->repository->updateEndereco($id,$data);
     }
 
-    function delete($id)
+    function deleteEndereco($id)
     {
         return $this->repository->delete($id);
     }

@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Endereco extends Model
 {
-    protected $fillable = ['logradouro', 'numero', 'bairro', 'cidade_id','status'];
+    use HasFactory;
+
+    protected $fillable = [
+        'logradouro',
+        'numero',
+        'bairro',
+        'complemento',
+        'cidade_id',
+        'status'
+    ];
 }

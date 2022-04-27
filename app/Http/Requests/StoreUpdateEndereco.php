@@ -24,10 +24,12 @@ class StoreUpdateEndereco extends FormRequest
     public function rules()
     {
         return [
-            'logradouro' => ['required','min:3'],
-            'numero'     => ['required','min:1'],
-            'bairro'     => ['required','min:3'],
-            'cidade_id'  => ['required','min:1'],
+            'logradouro'  => ['required'],
+            'numero'      => ['required'],
+            'bairro'      => ['required'],
+            'complemento' => ['nullable'],
+            'cidade_id'   => ['required'],
+            'status'      => ['nullable'],
         ];
     }
 }

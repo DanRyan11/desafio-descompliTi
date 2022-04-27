@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('endereco', function (Blueprint $table) {
+        Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
             $table->string('logradouro');
             $table->integer('numero');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('complemento')->nullable();
             $table->unsignedBigInteger('cidade_id');
             $table->timestamps();
-            $table->binary('status')->default(1);
+            $table->boolean('status')->default(1);
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('endereco');
+        Schema::dropIfExists('enderecos');
     }
 };

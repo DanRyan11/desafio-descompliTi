@@ -55,7 +55,7 @@ class EnderecoController extends Controller
 
         if($validatedForm !== true) return $validatedForm;
 
-        $this->enderecoService->updateEndereco($id, $request->validated());
+        $this->enderecoService->updateEndereco($id, $params);
 
         return response()->json(['updated' => true], 202);
     }

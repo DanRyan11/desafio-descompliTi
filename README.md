@@ -43,8 +43,8 @@ Requisições para a API devem seguir os padrões:
 
 2 - Realize o clone do projeto da forma que for melhor para você
 
-3 - Configure o ambiente do laradock executando o script shell '**initLaradock.sh**' na raiz do projeto
-> Caso ocorra algum erro efetue a instalação manual do laradock
+3 - Configure o ambiente do laradock executando o script shell '**initLaradock.sh**' na raiz do projeto.
+Caso ocorra algum erro efetue a instalação manual do laradock
 
 INSTALAÇÃO MANUAL DO AMBIENTE LARADOCK
 

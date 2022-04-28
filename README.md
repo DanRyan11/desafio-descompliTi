@@ -90,3 +90,5 @@ INSTALAÇÃO MANUAL DO AMBIENTE LARADOCK
 * Laradock
 * Docker
 * Bash
+* MySQL
+* Nginx

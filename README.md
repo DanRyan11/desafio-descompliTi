@@ -47,7 +47,7 @@ Requisições para a API devem seguir os padrões:
 
 2 - Realize o clone do projeto
 
-3 - Instale as dependências do PHP e a configuração do ambiente via [`composer`](https://getcomposer.org)
+3 - Instale as dependências do PHP(V 8.1) e a configuração do ambiente via [`composer`](https://getcomposer.org)(V 2.2.6)
 > Utilizando o composer local
 >
 > ```bash

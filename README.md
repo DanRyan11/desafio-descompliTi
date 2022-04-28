@@ -56,7 +56,8 @@ Requisições para a API devem seguir os padrões:
 > Caso ocorra algum erro, continue com o processo de configuração do ambiente manualmente
 </br>
 
->INSTALAÇÃO MANUAL DO AMBIENTE
+INSTALAÇÃO MANUAL DO AMBIENTE
+
 3.1 - Clone o diretório do laradock
 > Utilizando o composer local
 >

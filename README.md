@@ -52,21 +52,21 @@ INSTALAÇÃO MANUAL DO AMBIENTE LARADOCK
 > Utilizando o composer local
 >
 > ```bash
-> git clone https://github.com/Laradock/laradock.git;
+> git clone https://github.com/Laradock/laradock.git ../laradock;
 > ```
 > Caso ocorra algum erro, é necessário fazer a configuração do ambiente manualmente
 
 3.2 - Copie o .env.laradock para o .env do laradock
 >
 > ```bash
-> cp .env.laradock ./laradock/.env;
+> cp .env.laradock ../laradock/.env;
 > ```
 
 3.3 - Entre na pasta laradock e suba os containers
 >
 > ```bash
-> cd laradock; # Entra na pasta laradock
-> docker-compose up -d nginx mysql; #  Faz o build dos container e sobe eles
+> cd ../laradock; # Entra na pasta laradock
+> docker-compose up -d nginx mysql; # Faz o build dos container e sobe eles
 > ```
 
 4 - Instale as dependências do PHP via composer executando o comando dentro do container '*workspace*'

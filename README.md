@@ -1,7 +1,3 @@
-<!-- docker-compose up -d nginx mysql -->
-<!-- docker-compose exec --user=laradock workspace bash -->
-<!-- php artisan migrate -->
-
 ## Api para o teste da DescompliTi
 
 Este projeto disponibiliza uma API REST que permite o acesso as cidades e estados integrando com a API de localidades do IBGE, e também a criação de endereços.
@@ -73,8 +69,9 @@ INSTALAÇÃO MANUAL DO AMBIENTE LARADOCK
 > docker-compose up -d nginx mysql; #  Faz o build dos container e sobe eles
 > ```
 
-4 - Instale as dependências do PHP via composer executando o comando dentro do container workspace
+4 - Instale as dependências do PHP via composer executando o comando dentro do container '*workspace*'
 > ```bash
+> docker exec -it <container id> bash # Comando para entrar dentro do container, verifique o container id do workspace utilizando 'docker ps'
 > composer install
 > ```
 </br>

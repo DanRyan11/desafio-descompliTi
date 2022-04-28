@@ -41,7 +41,7 @@ Requisições para a API devem seguir os padrões:
 1 - Realize o download do [`docker`](https://www.docker.com/get-started), aconselhavel caso utilizar windows utilizar a distro linux.
 </br>
 
-2 - Realize o clone do projeto desafio-tr da forma que for melhor
+2 - Realize o clone do projeto da forma que for melhor para você
 
 3 - Configure o ambiente do laradock executando o script shell '**initLaradock.sh**' na raiz do projeto
 > Caso ocorra algum erro efetue a instalação manual do laradock

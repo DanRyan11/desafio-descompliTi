@@ -45,18 +45,12 @@ Requisições para a API devem seguir os padrões:
 1 - Realize o download do [`docker`](https://www.docker.com/get-started), aconselhavel caso utilizar windows utilizar a distro linux.
 </br>
 
-2 - Realize o clone do projeto
+2 - Realize o clone do projeto desafio-tr da forma que for melhor
 
-3 - Instale as dependências do PHP(V 8.1) e a configuração do ambiente via [`composer`](https://getcomposer.org)(V 2.2.6)
-> Utilizando o composer local
->
-> ```bash
-> composer install
-> ```
-> Caso ocorra algum erro, continue com o processo de configuração do ambiente manualmente
-</br>
+3 - Configure o ambiente do laradock executando o script shell '**initLaradock.sh**' na raiz do projeto
+> Caso ocorra algum erro efetue a instalação manual do laradock
 
-INSTALAÇÃO MANUAL DO AMBIENTE
+INSTALAÇÃO MANUAL DO AMBIENTE LARADOCK
 
 3.1 - Clone o diretório do laradock
 > Utilizando o composer local
@@ -66,20 +60,26 @@ INSTALAÇÃO MANUAL DO AMBIENTE
 > ```
 > Caso ocorra algum erro, é necessário fazer a configuração do ambiente manualmente
 
-3.2 - Copie o .env.local para o .env do laravel
+3.2 - Copie o .env.laradock para o .env do laradock
 >
 > ```bash
 > cp .env.laradock ./laradock/.env;
 > ```
 
-3.3 - Suba os containers do laradock
+3.3 - Entre na pasta laradock e suba os containers
 >
 > ```bash
-> cd laradock;
-> docker-compose up -d nginx mysql;
+> cd laradock; # Entra na pasta laradock
+> docker-compose up -d nginx mysql; #  Faz o build dos container e sobe eles
 > ```
- 
-4 - Execute as migrations
+
+4 - Instale as dependências do PHP via composer executando o comando dentro do container workspace
+> ```bash
+> composer install
+> ```
+</br>
+
+5 - Execute as migrations
 > Utilizando o artisan
 > ```bash
 > php artisan migrate

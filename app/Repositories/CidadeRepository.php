@@ -18,11 +18,11 @@ class CidadeRepository{
         return $this->entity->all();
     }
 
-    public function get(string $id)
+    public function get(string $id, bool $return404=true)
     {
-        return $this->entity
-                    ->where('id_ibge',$id)
-                        ->firstOrFail();
+        $cidade = $this->entity
+                    ->where('id_ibge',$id);
+        return $return404 ? $cidade->firstOrFail() : $cidade->first();
     }
 
     public function create(array $data)

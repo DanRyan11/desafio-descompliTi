@@ -12,9 +12,9 @@ class CidadeService{
         $this->repository = $repository;
     }
 
-    public function get($id = false)
+    public function get($id = false,bool $return404 = true)
     {
-        return $id ? $this->repository->get($id) : $this->repository->getAll();
+        return $id ? $this->repository->get($id,$return404) : $this->repository->getAll();
     }
 
     public function create(array $data)

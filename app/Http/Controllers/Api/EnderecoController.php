@@ -30,7 +30,9 @@ class EnderecoController extends Controller
     {
         $params = $request->validated();
 
-        $this->municipioService->get($params['cidade_ibge']);
+        $validatedForm = $this->validateForm($params);
+
+        if($validatedForm !== true) return $validatedForm;
 
         $endereco = $this->enderecoService
             ->createNewEndereco($params);
@@ -47,6 +49,12 @@ class EnderecoController extends Controller
 
     public function update(StoreUpdateEndereco $request, $id)
     {
+        $params = $request->validated();
+
+        $validatedForm = $this->validateForm($params);
+
+        if($validatedForm !== true) return $validatedForm;
+
         $this->enderecoService->updateEndereco($id, $request->validated());
 
         return response()->json(['updated' => true], 202);
@@ -57,5 +65,17 @@ class EnderecoController extends Controller
         $this->enderecoService->deleteEndereco($id);
 
         return response()->json([], 204);
+    }
+
+    public function validateForm($params)
+    {
+        if(!is_numeric($params['numero'])) return response()->json(['error' => 'Número informado inválido'], 400);
+        if(!is_numeric($params['cidade_ibge'])) return response()->json(['error' => 'O ibge é formado apenas por número'], 400);
+
+        $municipioValidacao = $this->municipioService->get($params['cidade_ibge'],false);
+
+        if(!$municipioValidacao) return response()->json(['error' => 'Cidade não encontrada'], 400);
+
+        return true;
     }
 }

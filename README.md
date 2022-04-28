@@ -53,8 +53,37 @@ Requisições para a API devem seguir os padrões:
 > ```bash
 > composer install
 > ```
-> Utilizando o composer local
+> Caso ocorra algum erro, continue com o processo de configuração do ambiente manualmente
 </br>
+
+>INSTALAÇÃO MANUAL DO AMBIENTE
+3.1 - Clone o diretório do laradock
+> Utilizando o composer local
+>
+> ```bash
+> git clone https://github.com/Laradock/laradock.git;
+> ```
+> Caso ocorra algum erro, é necessário fazer a configuração do ambiente manualmente
+
+3.2 - Copie o .env.local para o .env do laravel
+>
+> ```bash
+> cp .env.laradock ./laradock/.env;
+> ```
+
+3.3 - Suba os containers do laradock
+>
+> ```bash
+> cd laradock;
+> docker-compose up -d nginx mysql;
+> ```
+ 
+4 - Execute as migrations
+> Utilizando o artisan
+> ```bash
+> php artisan migrate
+> ```
+> Caso não funcione execute diretamente no container workspace
 
 ## Tecnologias utilizadas
 * PHP: 8.1

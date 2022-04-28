@@ -52,14 +52,14 @@ INSTALAÇÃO MANUAL DO AMBIENTE LARADOCK
 > Utilizando o composer local
 >
 > ```bash
-> git clone https://github.com/Laradock/laradock.git ../laradock;
+> git clone https://github.com/Laradock/laradock.git ./laradock;
 > ```
 > Caso ocorra algum erro, é necessário fazer a configuração do ambiente manualmente
 
 3.2 - Copie o .env.laradock para o .env do laradock
 >
 > ```bash
-> cp .env.laradock ../laradock/.env;
+> cp .env.laradock ./laradock/.env;
 > ```
 
 3.3 - Entre na pasta laradock e suba os containers

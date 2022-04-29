@@ -38,7 +38,7 @@ Requisições para a API devem seguir os padrões:
 
 ## Ambiente de desenvolvimento com Docker
 
-1 - Realize o download do [`docker`](https://www.docker.com/get-started), aconselhavel caso utilizar windows utilizar a distro linux.
+1 - Realize o download do [`docker`](https://www.docker.com/get-started), aconselhavel caso utilizar windows utilizar a distro UBUNTU.
 </br>
 
 2 - Realize o clone do projeto da forma que for melhor para você

@@ -18,7 +18,7 @@ class CidadeFactory extends Factory
     {
         return [
             'nome' => $this->faker->city,
-            'ibge' => $this->faker->numberBetween(1, 500000),
+            'id_ibge' => $this->faker->numberBetween(1, 500000),
         ];
     }
 }

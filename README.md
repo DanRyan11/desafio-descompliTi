@@ -76,7 +76,7 @@ INSTALAÇÃO MANUAL DO AMBIENTE LARADOCK
 > ```
 </br>
 
-5 - Execute as migrations
+5 - Execute as migrations dentro do container '*workspace*'
 > Utilizando o artisan
 > ```bash
 > php artisan migrate

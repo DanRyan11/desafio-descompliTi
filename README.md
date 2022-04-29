@@ -81,7 +81,6 @@ INSTALAÇÃO MANUAL DO AMBIENTE LARADOCK
 > ```bash
 > php artisan migrate
 > ```
-> Caso não funcione execute diretamente no container workspace
 
 ## Tecnologias utilizadas
 * PHP: 8.1

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Api;
 
+use App\Models\Cidade;
 use App\Models\Endereco;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -48,7 +49,7 @@ class EnderecoTest extends TestCase
             'logradouro'  => 'Rua Teste',
             'numero'      => '123',
             'bairro'      => 'Bairro Teste',
-            'cidade_ibge'   => 3100104,
+            'cidade_ibge' => Cidade::factory()->create()->id_ibge,
         ];
 
         shuffle($data);
@@ -62,14 +63,12 @@ class EnderecoTest extends TestCase
     public function test_create()
     {
         $data = [
-            "logradouro" => "Rua dos bobos",
-            "numero" => "123",
-            "bairro" => "123",
+            "logradouro"  => "Rua dos bobos",
+            "numero"      => "123",
+            "bairro"      => "123",
             "complemento" => "",
-            "cidade_ibge" => "3100104"
+            "cidade_ibge" => Cidade::factory()->create()->id_ibge,
         ];
-
-        $this->postJson('/cidades/import/mg');
 
         $response = $this->postJson('/enderecos',$data);
         
@@ -85,11 +84,9 @@ class EnderecoTest extends TestCase
             'numero'      => '123',
             'bairro'      => 'Bairro Teste',
             'complemento' => 'Complemento Teste',
-            'cidade_ibge'   => 3100104,
+            'cidade_ibge' => Cidade::factory()->create()->id_ibge,
         ];
         
-        $this->postJson('/cidades/import/mg');
-
         $response = $this->putJson("/enderecos/{$endereco->id}",$data);
         
         $response->assertStatus(202);
@@ -102,10 +99,8 @@ class EnderecoTest extends TestCase
             'numero'      => '123',
             'bairro'      => 'Bairro Teste',
             'complemento' => 'Complemento Teste',
-            'cidade_ibge'   => 3100104,
+            'cidade_ibge' => Cidade::factory()->create()->id_ibge,
         ];
-
-        $this->postJson('/cidades/import/mg');
 
         $response = $this->putJson("/enderecos/valor_fake",$data);
 
@@ -118,10 +113,8 @@ class EnderecoTest extends TestCase
             'logradouro'  => 'Rua Teste',
             'numero'      => '123',
             'bairro'      => 'Bairro Teste',
-            'cidade_ibge' => 3100104,
+            'cidade_ibge' => Cidade::factory()->create()->id_ibge,
         ];
-
-        $this->postJson('/cidades/import/mg');
 
         shuffle($data);
         array_shift($data);
